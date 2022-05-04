@@ -1,0 +1,8 @@
+
+Appendix
+************
+
+License
+=======
+
+.. include:: ../../LICENSE
