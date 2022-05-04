@@ -13,16 +13,43 @@ def validate_typehints(all=True, deep=False, clean_trace=True):
     based on type hints.
 
     Args:
-        all (bool): whether to ensure all arguments have type hints
-        deep (bool): whether to check nested type hints
-        clean_trace (bool): whether to clean the stack trace when
+        all (bool): Whether to ensure all arguments have type hints.
+        deep (bool): Whether to check nested type hints.
+        clean_trace (bool): Whether to clean the stack trace when
             errors occur. Type checking can blow up the stack, so
             only turn this flag off if you're debugging the validator
             itself.
 
     Raises:
-        TypeError if type hints are missing when `all=True`, or if
-        one or more type hints are unsupported.
+        TypeError: If type hints are missing when `all=True`, or if
+            one or more type hints are unsupported.
+
+
+    Examples:
+        By default, the decorator checks all type hints at a shallow
+        level.
+
+        >>> from easyvalidate import validate_typehints
+        >>>
+        >>> @validate_typehints()
+        ... def concat_int(left: str, right: int):
+        ...     return left + str(right)
+        ...
+        >>> concat_int('my favorite integer is ', 4)
+        'my favorite integer is 4'
+        >>> concat_int('my favorite integer is ', 'Dr. House')
+        Traceback (most recent call last):
+            ...
+        TypeError: Invalid type supplied for argument "right": Expected int not str
+
+        Keyword arguments work as well:
+
+        >>> concat_int(right=4, left='my favorite integer is ')
+        'my favorite integer is 4'
+        >>> concat_int(left='my favorite integer is ', right='Dr. House')
+        Traceback (most recent call last):
+            ...
+        TypeError: Invalid type supplied for argument "right": Expected int not str
     """
     def wrapper(func):
         argspec = inspect.getfullargspec(inspect.unwrap(func))
