@@ -1,4 +1,5 @@
-# easyvalidate
+# easyvalidate [![Documentation Status](https://readthedocs.org/projects/easyvalidate/badge/?version=latest)](https://easyvalidate.readthedocs.io/en/latest)
+
 A Python package containing utilities for different types of validations:
 
 - Validation of types
