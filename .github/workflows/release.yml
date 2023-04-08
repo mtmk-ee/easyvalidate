@@ -1,9 +1,9 @@
-name: Build Wheels
+name: Release
 
 on:
   push:
-    branches:
-      - develop
+    tags:
+      - 'v**'
 
 jobs:
   build_wheel:
