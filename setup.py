@@ -13,11 +13,17 @@ def run_setup():
         version=get_package_version(),
         author="Mitchell Matsumori-Kelly",
         description="Validation utilities",
+        long_description=_readme(),
+        long_description_content_type="text/markdown",
         python_requires=">=3.8",
         url="https://github.com/mtmk-ee/easyvalidate",
         install_requires=[],
         packages=setuptools.find_packages(),
     )
+
+def _readme() -> str:
+    with open('README.md') as f:
+        return f.read()
 
 
 def get_package_version() -> str:
