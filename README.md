@@ -9,8 +9,11 @@ A Python package containing utilities for different types of validations:
 
 ## Installation
 
-TODO
+You can install the package from PyPI using pip:
 
+```
+$ pip install easyvalidate
+```
 
 ## Feature Highlights
 
