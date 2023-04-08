@@ -3,8 +3,9 @@ import setuptools
 
 
 CODE_ROOT = os.path.dirname(os.path.abspath(__file__))
-PACKAGE_ROOT = os.path.join(CODE_ROOT, 'easyvalidate')
-VERSION_FILE = os.path.join(PACKAGE_ROOT, 'version.py')
+PACKAGE_ROOT = os.path.join(CODE_ROOT, 'src', 'easyvalidate')
+README_FILE = os.path.join(CODE_ROOT, 'README.md')
+VERSION_FILE = os.path.join(PACKAGE_ROOT, '_version.py')
 
 
 def run_setup():
@@ -19,10 +20,19 @@ def run_setup():
         url="https://github.com/mtmk-ee/easyvalidate",
         install_requires=[],
         packages=setuptools.find_packages(),
+        classifiers = [
+            "Development Status :: 3 - Alpha",
+            "Environment :: Console",
+            "Programming Language :: Python :: 3",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Operating System :: OS Independent",
+        ]
     )
 
 def _readme() -> str:
-    with open('README.md') as f:
+    """Get the contents of the README file"""
+    with open(README_FILE, 'r') as f:
         return f.read()
 
 
