@@ -1,4 +1,6 @@
 [![Documentation Status](https://readthedocs.org/projects/easyvalidate/badge/?version=latest)](https://easyvalidate.readthedocs.io/en/latest)
+[![License](https://img.shields.io/pypi/l/easyvalidate)](https://github.com/mtmk-ee/easyvalidate/blob/develop/LICENSE)
+[![PyPI version](https://img.shields.io/pypi/v/easyvalidate)](https://pypi.org/project/easyvalidate/)
 
 # easyvalidate
 
