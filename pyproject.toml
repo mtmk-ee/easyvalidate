@@ -1,0 +1,33 @@
+[project]
+name = "easyvalidate"
+authors = [{ name = "Mitchell Matsumori-Kelly" }]
+description = "Validation utilities"
+readme = "README.md"
+dynamic = ["version"]
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+homepage = "https://github.com/mtmk-ee/easyvalidate"
+documentation = "https://easyvalidate.readthedocs.io/en/latest/"
+repository = "https://github.com/mtmk-ee/easyvalidate.git"
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-mock"]
+
+[build-system]
+requires = ["setuptools>=67.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = { attr = "easyvalidate._version.__version__" }
